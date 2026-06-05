@@ -1,39 +1,126 @@
-Projeto WitAI-TTS - Microcontroladores
-Este projeto consiste na implementação de um sistema de Text-to-Speech (TTS) utilizando o microcontrolador ESP32 integrado à API Wit.ai da Meta. O objetivo é permitir que o hardware converta mensagens de texto em áudio natural em tempo real, utilizando o protocolo de comunicação digital I2S.
+# 🎙️ WitAI-TTS para ESP32
 
-🚀 Sobre o Projeto
-A aplicação utiliza a biblioteca WitAITTS para realizar requisições HTTPS à API do Wit.ai, processando o stream de áudio recebido e reproduzindo-o através de um periférico externo de áudio.
+Projeto desenvolvido para a disciplina de **Microcontroladores** da **UNIFAVIP Wyden**, com o objetivo de implementar um sistema de **Text-to-Speech (TTS)** utilizando o microcontrolador **ESP32** integrado à API **Wit.ai**, da Meta.
 
-Principais funcionalidades:
+O sistema é capaz de converter textos em fala natural em tempo real, reproduzindo o áudio através de dispositivos compatíveis com o protocolo **I2S**. Além disso, conta com integração via **MQTT**, permitindo a comunicação entre o hardware e uma aplicação frontend para envio e recebimento de dados.
 
-Conversão de texto para voz com suporte a múltiplas vozes (masculinas e femininas).
+---
 
-Personalização de estilo de fala, tom (pitch) e velocidade.
+## 🚀 Sobre o Projeto
 
-Saída de áudio de alta fidelidade via protocolo I2S.
+A aplicação utiliza a biblioteca **WitAITTS** para realizar requisições HTTPS à API do Wit.ai, processar o fluxo de áudio recebido e reproduzi-lo por meio de um periférico de áudio externo conectado ao ESP32.
 
-transferência de dados via MQTT, com integração com o frontend
+### ✨ Funcionalidades
 
+- Conversão de texto para voz (*Text-to-Speech*);
+- Suporte a múltiplas vozes (masculinas e femininas);
+- Personalização de:
+  - Estilo de fala;
+  - Tom da voz (*pitch*);
+  - Velocidade de reprodução;
+- Reprodução de áudio com alta qualidade utilizando o protocolo I2S;
+- Comunicação em tempo real através do protocolo MQTT;
+- Integração com frontend para envio de mensagens e controle do sistema.
 
-🛠️ Hardware Utilizado
-Microcontrolador: ESP32 (DevKit V1 / S3 / C3).
-DAC/Amplificador: Módulo MAX98357A (Interface I2S).
-Saída: Alto-falante de 4-8 Ohms (3W).
+---
 
-👥 Integrantes do Grupo
-Esther
-Beatriz
-Ernandy
-Gabriela
-Bruno
+## 🛠️ Hardware Utilizado
 
-Como rodar o projeto
-Configure as credenciais de Wi-Fi e o WIT_TOKEN no código fonte, após isso faça o uploud a do seu INO nas esp32. (garanta que as devidas bibliotecas estejam configuradas).
-Em anexo do repositório, iremos deixar a biblioteca que foi essencial para a configuração do ambiente.
+| Componente | Descrição |
+|------------|------------|
+| Microcontrolador | ESP32 (DevKit V1, ESP32-S3 ou ESP32-C3) |
+| DAC/Amplificador | MAX98357A (Interface I2S) |
+| Saída de Áudio | Alto-falante de 4–8 Ω (3W) |
 
-Certifique-se de ter as dependências instaladas via PlatformIO.
-Faça o upload para o ESP32 e abra o Serial Monitor para enviar os textos que serão falados.
+---
 
-Cadeira: Microcontroladores
-Instituição: Unifavip Wyden
-Ano: 2026
+## ⚙️ Tecnologias Utilizadas
+
+- ESP32
+- C++
+- Arduino Framework
+- Wit.ai API
+- MQTT
+- Wi-Fi
+- I2S
+- PlatformIO
+
+---
+
+## 📂 Estrutura do Projeto
+
+```text
+.
+├── src/
+│   ├── main.cpp
+│   ├── WitAITTS.cpp
+│   └── WitAITTS.h
+├── lib/
+├── include/
+├── platformio.ini
+└── README.md
+```
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### 1. Configurar Credenciais
+
+Configure as credenciais de Wi-Fi e o token da API Wit.ai no código-fonte:
+
+```cpp
+const char* WIFI_SSID = "SEU_WIFI";
+const char* WIFI_PASSWORD = "SUA_SENHA";
+const char* WIT_TOKEN = "SEU_TOKEN";
+```
+
+### 2. Configurar as Dependências
+
+Certifique-se de que todas as bibliotecas necessárias estejam instaladas e configuradas corretamente no ambiente de desenvolvimento.
+
+Uma cópia da biblioteca utilizada no projeto será disponibilizada junto ao repositório para facilitar a configuração do ambiente.
+
+### 3. Compilar e Fazer Upload
+
+Utilizando o PlatformIO:
+
+```bash
+pio run
+pio run --target upload
+```
+
+Ou faça o upload diretamente pela Arduino IDE, caso o projeto esteja configurado para esse ambiente.
+
+### 4. Executar
+
+Após a gravação do firmware:
+
+1. Conecte a ESP32 à rede Wi-Fi configurada;
+2. Abra o Serial Monitor para acompanhar os logs do sistema;
+3. Envie textos pelo frontend ou via MQTT;
+4. O dispositivo realizará a conversão do texto em fala e reproduzirá o áudio pelo alto-falante conectado.
+
+---
+
+## 👥 Equipe do Projeto
+
+- Esther
+- Beatriz
+- Ernandy
+- Gabriela
+- Bruno
+
+---
+
+## 🎓 Informações Acadêmicas
+
+**Disciplina:** Microcontroladores  
+**Instituição:** UNIFAVIP Wyden  
+**Ano:** 2026
+
+---
+
+## 📌 Observações
+
+Este projeto possui fins acadêmicos e foi desenvolvido para demonstrar a integração entre sistemas embarcados, serviços de inteligência artificial, protocolos IoT e reprodução de áudio digital em tempo real.
