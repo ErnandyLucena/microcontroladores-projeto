@@ -47,22 +47,6 @@ A aplicação utiliza a biblioteca **WitAITTS** para realizar requisições HTTP
 
 ---
 
-## 📂 Estrutura do Projeto
-
-```text
-.
-├── src/
-│   ├── main.cpp
-│   ├── WitAITTS.cpp
-│   └── WitAITTS.h
-├── lib/
-├── include/
-├── platformio.ini
-└── README.md
-```
-
----
-
 ## 🚀 Como Executar o Projeto
 
 ### 1. Configurar Credenciais
@@ -105,11 +89,11 @@ Após a gravação do firmware:
 
 ## 👥 Equipe do Projeto
 
-- Esther
-- Beatriz
-- Ernandy
-- Gabriela
-- Bruno
+- [Ernandy Lucena](https://github.com/ErnandyLucena)
+- [Bruno José](https://github.com/BrunoJose18)
+- [Esther Vila Nova](https://github.com/evncosta)
+- [Beatriz Vila Nova](https://github.com/beatrizvnn)
+- [Gabriela Silva](https://github.com/gabiissilvaa)
 
 ---
 
